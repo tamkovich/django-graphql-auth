@@ -127,6 +127,10 @@ class ObtainJSONWebToken(
     __doc__ = ObtainJSONWebTokenMixin.__doc__
     user = graphene.Field(UserNode)
     unarchiving = graphene.Boolean(default_value=False)
+    payload = GenericScalar(required=False)
+    refresh_expires_in = graphene.Int(required=False)
+    token = graphene.Field(graphene.String, required=False)
+    refresh_token = graphene.Field(graphene.String, required=False)
 
     @classmethod
     def Field(cls, *args, **kwargs):
